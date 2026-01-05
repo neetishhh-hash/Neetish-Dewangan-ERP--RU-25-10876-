@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #box {
+      width: 200px;
+      height: 100px;
+      background: steelblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box">Hover or Press Keys</div>
+  <button id="remove">Remove Events</button>
+
+  <script>
+    const box = document.getElementById("box");
+    const removeBtn = document.getElementById("remove");
+
+    function onMouseEnter() {
+      box.textContent = "Mouse Over";
+      box.style.background = "seagreen";
+    }
+
+    function onMouseLeave() {
+      box.textContent = "Hover or Press Keys";
+      box.style.background = "steelblue";
+    }
+
+    function onKeyPress(e) {
+      box.textContent = "Key: " + e.key;
+    }
+
+    box.addEventListener("mouseenter", onMouseEnter);
+    box.addEventListener("mouseleave", onMouseLeave);
+    document.addEventListener("keydown", onKeyPress);
+
+    removeBtn.addEventListener("click", function () {
+      box.removeEventListener("mouseenter", onMouseEnter);
+      box.removeEventListener("mouseleave", onMouseLeave);
+      document.removeEventListener("keydown", onKeyPress);
+      box.textContent = "Events Removed";
+    });
+  </script>
+
+</body>
+</html>

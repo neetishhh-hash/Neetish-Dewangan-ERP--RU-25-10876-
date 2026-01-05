@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .highlight {
+      color: white;
+      background-color: teal;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="box" class="highlight">This element can be shown or hidden.</p>
+  <button id="toggleBtn">Toggle</button>
+
+  <script>
+    const box = document.getElementById("box");
+    const button = document.getElementById("toggleBtn");
+
+    button.onclick = function () {
+      box.classList.toggle("hidden");
+      box.classList.toggle("highlight");
+    };
+  </script>
+
+</body>
+</html>

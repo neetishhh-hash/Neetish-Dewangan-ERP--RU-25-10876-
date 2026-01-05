@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation with JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form onsubmit="return validateForm()">
+        <label>
+            Name:
+            <input type="text" id="name" oninput="checkName()">
+        </label>
+
+        <label>
+            Email:
+            <input type="text" id="email" oninput="checkEmail()">
+        </label>
+
+        <label>
+            Password:
+            <input type="password" id="password">
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function checkName() {
+            let name = document.getElementById("name").value;
+            if (name.length < 3) {
+                alert("Name must be at least 3 characters long");
+            }
+        }
+
+        function checkEmail() {
+            let email = document.getElementById("email").value;
+            if (!email.includes("@")) {
+                alert("Email must contain @");
+            }
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (name === "") {
+                alert("Name is required");
+                return false;
+            }
+
+            if (email === "") {
+                alert("Email is required");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

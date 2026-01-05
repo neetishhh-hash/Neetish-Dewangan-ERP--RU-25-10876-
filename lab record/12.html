@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Conditions and Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Conditional Statements and Loops</h1>
+
+    <h2>Output:</h2>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        let number = 10;
+
+        if (number > 0) {
+            output.innerHTML += "<p>The number is positive.</p>";
+        } else if (number < 0) {
+            output.innerHTML += "<p>The number is negative.</p>";
+        } else {
+            output.innerHTML += "<p>The number is zero.</p>";
+        }
+
+        let day = 2;
+
+        switch (day) {
+            case 1:
+                output.innerHTML += "<p>Day: Monday</p>";
+                break;
+            case 2:
+                output.innerHTML += "<p>Day: Tuesday</p>";
+                break;
+            case 3:
+                output.innerHTML += "<p>Day: Wednesday</p>";
+                break;
+            default:
+                output.innerHTML += "<p>Invalid day</p>";
+        }
+
+
+        // For Loop
+        output.innerHTML += "<h2>For Loop</h2>";
+        for (let i = 1; i <= 5; i++) {
+            output.innerHTML += "<p>Count: " + i + "</p>";
+        }
+
+        // While Loop
+        output.innerHTML += "<h2>While Loop</h2>";
+        let j = 1;
+        while (j <= 5) {
+            output.innerHTML += "<p>Count: " + j + "</p>";
+            j++;
+        }
+
+        // Do...While Loop
+        output.innerHTML += "<h2>Do...While Loop</h2>";
+        let k = 1;
+        do {
+            output.innerHTML += "<p>Count: " + k + "</p>";
+            k++;
+        } while (k <= 5);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+  <h2 id="title">Hello</h2>
+  <p class="text">This is a paragraph.</p>
+  <button id="btn">Click Me</button>
+
+  <script>
+    
+    const title = document.getElementById("title");
+    title.innerHTML = "Title changed!";
+
+    const paragraph = document.querySelector(".text");
+    paragraph.innerHTML = "Paragraph updated!";
+
+    document.querySelector("#btn").onclick = function () {
+      document.body.innerHTML += "<p>New content added!</p>";
+    };
+  </script>
+
+</body>
+</html>

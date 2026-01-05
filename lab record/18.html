@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    ul {
+      margin-top: 10px;
+    }
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="add">Add Item</button>
+  <button id="remove">Remove Last</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    const list = document.getElementById("list");
+    const addBtn = document.getElementById("add");
+    const removeBtn = document.getElementById("remove");
+
+    addBtn.onclick = function () {
+      const item = document.createElement("li");
+      item.textContent = "New Item";
+      list.appendChild(item);
+    };
+
+    removeBtn.onclick = function () {
+      if (list.lastChild) {
+        list.removeChild(list.lastChild);
+      }
+    };
+
+    list.addEventListener("click", function (e) {
+      if (e.target.tagName === "LI") {
+        e.target.textContent = "Item Clicked";
+      }
+    });
+  </script>
+
+</body>
+</html>

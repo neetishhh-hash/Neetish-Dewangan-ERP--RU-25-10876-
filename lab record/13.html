@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions and Scope</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User-Defined Functions & Scope in JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+
+        output.innerHTML += "<h2>Function Example</h2>";
+        output.innerHTML += "<p>" + greet("Alice") + "</p>";
+        output.innerHTML += "<p>" + greet("Bob") + "</p>";
+
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        output.innerHTML += "<p>Sum: " + addNumbers(5, 3) + "</p>";
+
+        output.innerHTML += "<h2>Scope Demonstration</h2>";
+
+        function varExample() {
+            if (true) {
+                var x = 10;
+            }
+            output.innerHTML += "<p>var x = " + x + "</p>";
+        }
+        varExample();
+
+        function letExample() {
+            if (true) {
+                let y = 20;
+                output.innerHTML += "<p>let y inside block = " + y + "</p>";
+            }
+        }
+        letExample();
+
+        function constExample() {
+            const z = 30;
+            output.innerHTML += "<p>const z = " + z + "</p>";
+        }
+        constExample();
+
+        var globalVar = "I am global";
+
+        function scopeTest() {
+            let localVar = "I am local";
+            output.innerHTML += "<p>" + globalVar + "</p>";
+            output.innerHTML += "<p>" + localVar + "</p>";
+        }
+
+        scopeTest();
+    </script>
+
+</body>
+</html>
